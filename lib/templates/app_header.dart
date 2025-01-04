@@ -45,7 +45,7 @@ class Header extends StatelessWidget {
               route.SkillsRoute,
               PageSelection.Skills,
               () {
-                scrollToFunc((size.height + (size.height * .7)));
+                scrollToFunc((size.height + (size.height * .9)));
               },
             ),
             CommonWidget.textWidget(

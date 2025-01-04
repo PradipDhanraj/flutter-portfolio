@@ -10,28 +10,13 @@ class SkillsViewModel extends BaseModel {
   final double unfocusedopacity = .5;
 
   SkillsViewModel() {
-    selectedskill = "Xamarin";
+    selectedskill = "Flutter";
     techpic = "$selectedskill.png";
     skillslist = [
       {
-        "title": "Xamarin",
+        "title": "Flutter",
         "fontsize": focusedsize,
         "opacity": focusedopacity,
-        "skills": [
-          "Custom renderers.",
-          "Styles & behaviors.",
-          "Native Android & iOS features.",
-          "Styles & behaviors.",
-          "Reusable components.",
-          "Knowledge of cross-platform structure.",
-          "Experience with JSON, XAML/XML, and Web Services.",
-          "State management",
-        ],
-      },
-      {
-        "title": "Flutter",
-        "fontsize": unfocusedsize,
-        "opacity": unfocusedopacity,
         "skills": [
           "State Managements (Bloc, GetX, Provider)",
           "Databases (Drft, sqlite)",
@@ -41,6 +26,21 @@ class SkillsViewModel extends BaseModel {
           "Unity Integration",
           "IOT projects(Bluetooth, wifi)",
           "Foreign Function Interface (FFI) integration",
+        ],
+      },
+      {
+        "title": "Xamarin",
+        "fontsize": unfocusedsize,
+        "opacity": unfocusedopacity,
+        "skills": [
+          "Custom renderers.",
+          "Styles & behaviors.",
+          "Native Android & iOS features.",
+          "Styles & behaviors.",
+          "Reusable components.",
+          "Knowledge of cross-platform structure.",
+          "Experience with JSON, XAML/XML, and Web Services.",
+          "State management",
         ],
       },
       {

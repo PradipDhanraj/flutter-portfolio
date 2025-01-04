@@ -16,7 +16,7 @@ class HomePage extends StatelessWidget {
       children: [
         // bio Section
         SizedBox(
-          height: size.height * .8,
+          height: size.height * .9,
           width: double.maxFinite,
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
