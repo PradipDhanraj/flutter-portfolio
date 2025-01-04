@@ -4,6 +4,7 @@ import 'package:portfolio/viewmodels/contact-viewmodel.dart';
 import 'package:provider/provider.dart';
 
 class Contact extends StatelessWidget {
+  final double fontSize = 30;
   @override
   Widget build(BuildContext context) {
     var width = MediaQuery.of(context).size.width;
@@ -47,6 +48,7 @@ class Contact extends StatelessWidget {
                                     "${model.profile["name"]} - ${model.profile["location"]}",
                                     style: TextStyle(
                                       color: Colors.white,
+                                      fontSize: fontSize,
                                     ),
                                   ),
                                   // Text(
@@ -59,6 +61,7 @@ class Contact extends StatelessWidget {
                                     "${model.profile['currentjob']['organization']} - ${model.profile['currentjob']['position']}",
                                     style: TextStyle(
                                       color: Colors.white,
+                                      fontSize: fontSize,
                                     ),
                                   ),
                                   // Text(
@@ -76,6 +79,7 @@ class Contact extends StatelessWidget {
                                         textAlign: TextAlign.center,
                                         style: TextStyle(
                                           color: Colors.white,
+                                          fontSize: fontSize,
                                         ),
                                       ),
                                       Column(
@@ -86,6 +90,7 @@ class Contact extends StatelessWidget {
                                                 "$m",
                                                 style: TextStyle(
                                                   color: Colors.white,
+                                                  fontSize: fontSize,
                                                 ),
                                               ),
                                             )
@@ -101,6 +106,7 @@ class Contact extends StatelessWidget {
                                         "Emails : ",
                                         style: TextStyle(
                                           color: Colors.white,
+                                          fontSize: fontSize,
                                         ),
                                       ),
                                       Column(
@@ -111,6 +117,7 @@ class Contact extends StatelessWidget {
                                                 "$m",
                                                 style: TextStyle(
                                                   color: Colors.white,
+                                                  fontSize: fontSize,
                                                 ),
                                               ),
                                             )

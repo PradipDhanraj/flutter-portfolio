@@ -8,7 +8,7 @@ import 'package:portfolio/resources/enum.dart';
 import 'package:portfolio/viewmodels/base-viewmodel.dart';
 
 class StartPageViewModel extends BaseModel {
-  Color home = selectedColor;
+  Color home = Colors.white;
   Color skills = Colors.white;
   Color work = Colors.white;
   Color contact = Colors.white;

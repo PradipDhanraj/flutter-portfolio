@@ -32,7 +32,7 @@ class Skills extends StatelessWidget {
         child: Consumer<SkillsViewModel>(
           builder: (context, model, child) {
             return Column(
-              mainAxisAlignment: MainAxisAlignment.start,
+              mainAxisAlignment: MainAxisAlignment.center,
               mainAxisSize: MainAxisSize.max,
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [

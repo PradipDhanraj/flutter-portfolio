@@ -4,8 +4,8 @@ import 'package:flutter/services.dart';
 import 'package:portfolio/viewmodels/base-viewmodel.dart';
 
 class WorkViewModel extends BaseModel {
-  final double focusedsize = 30;
-  final double unfocusedsize = 20;
+  final double focusedsize = 45;
+  final double unfocusedsize = 30;
   late List<Map<String, dynamic>> worklist;
   //String selectedskill;
   //String brand;
@@ -15,7 +15,7 @@ class WorkViewModel extends BaseModel {
   int _selectedindex = 0;
   int get selectedindex => _selectedindex;
   set selectedindex(int value) {
-    _selectedindex= value;
+    _selectedindex = value;
     notifyListeners();
   }
 
