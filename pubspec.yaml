@@ -54,7 +54,7 @@ flutter:
      - assets/banner.jpg
      - assets/Flutter.png
      - assets/Xamarin.png
-     - assets/NodeJS.png
+     - assets/.Net_Core.png
      - assets/android.png
      - assets/ios.png
      - assets/windows.png
