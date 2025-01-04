@@ -14,7 +14,7 @@ Route<dynamic> generateRoute(RouteSettings settings) {
     case routes.SkillsRoute:
       return MaterialPageRoute(builder: (context) => Skills());
     case routes.HomeRoute:
-      return MaterialPageRoute(builder: (context) => DarkDashboard());
+      return MaterialPageRoute(builder: (context) => HomePage());
     case routes.WorkRoute:
       return MaterialPageRoute(builder: (context) => Work());
     case routes.ContactRoute:

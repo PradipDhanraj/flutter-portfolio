@@ -15,14 +15,13 @@ class Contact extends StatelessWidget {
           builder: (BuildContext context, AsyncSnapshot<dynamic> snapshot) {
             return snapshot.hasData
                 ? Container(
-                    height: 500,
+                    height: MediaQuery.of(context).size.height * .5,
                     child: Center(
                       child: Table(
                         columnWidths: {
                           0: FractionColumnWidth(.4),
                         },
-                        defaultVerticalAlignment:
-                            TableCellVerticalAlignment.middle,
+                        defaultVerticalAlignment: TableCellVerticalAlignment.middle,
                         children: [
                           TableRow(
                             children: [
@@ -69,8 +68,7 @@ class Contact extends StatelessWidget {
                                   //   ),
                                   // ),
                                   Row(
-                                    crossAxisAlignment:
-                                        CrossAxisAlignment.start,
+                                    crossAxisAlignment: CrossAxisAlignment.start,
                                     mainAxisAlignment: MainAxisAlignment.center,
                                     children: [
                                       Text(
@@ -81,10 +79,8 @@ class Contact extends StatelessWidget {
                                         ),
                                       ),
                                       Column(
-                                        crossAxisAlignment:
-                                            CrossAxisAlignment.center,
-                                        children: (model.profile['contatnumber']
-                                                as List<dynamic>)
+                                        crossAxisAlignment: CrossAxisAlignment.center,
+                                        children: (model.profile['contatnumber'] as List<dynamic>)
                                             .map(
                                               (m) => Text(
                                                 "$m",
@@ -98,8 +94,7 @@ class Contact extends StatelessWidget {
                                     ],
                                   ),
                                   Row(
-                                    crossAxisAlignment:
-                                        CrossAxisAlignment.start,
+                                    crossAxisAlignment: CrossAxisAlignment.start,
                                     mainAxisAlignment: MainAxisAlignment.center,
                                     children: [
                                       Text(
@@ -109,10 +104,8 @@ class Contact extends StatelessWidget {
                                         ),
                                       ),
                                       Column(
-                                        crossAxisAlignment:
-                                            CrossAxisAlignment.start,
-                                        children: (model.profile['email']
-                                                as List<dynamic>)
+                                        crossAxisAlignment: CrossAxisAlignment.start,
+                                        children: (model.profile['email'] as List<dynamic>)
                                             .map(
                                               (m) => Text(
                                                 "$m",

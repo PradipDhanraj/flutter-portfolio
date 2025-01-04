@@ -3,7 +3,7 @@ import 'package:portfolio/viewmodels/base-viewmodel.dart';
 
 class HomeViewModel extends BaseModel {
   HomeViewModel() {
-    displaycontainer = DarkDashboard();
+    displaycontainer = HomePage();
   }
   // Future logout({bool success = true}) async {
   //   setBusy(true);

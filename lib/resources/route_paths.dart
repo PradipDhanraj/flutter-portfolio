@@ -1,5 +1,5 @@
-const String HomeRoute = 'Home';
-const String SkillsRoute = 'Skills';
-const String WorkRoute = 'Work';
-const String ContactRoute = 'Contact';
+const String HomeRoute = 'ABOUT_ME';
+const String SkillsRoute = 'TECH_STACK';
+const String WorkRoute = 'PROJECTS_I_HAVE_WORKED_ON';
+const String ContactRoute = 'CONTACT_ME';
 const String StartPageRoute = 'Start';

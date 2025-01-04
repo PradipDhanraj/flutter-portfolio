@@ -1,13 +1,12 @@
 class Strings {
   static const String title = 'PORFOLIO';
-  static const String bioLine1 = "Hi, I'm Pradip.";
+  static const String bioLine1 = "Hi, I'm Pradip P. Dhanraj";
   static const String bioLine2 = "I build value through mobile applications.";
   static const String bioLine3 =
-      "I am Indian 🇮🇳  mobile applicatio developer who loves building digital products.";
+      "I am an accomplished Indian 🇮🇳 mobile application developer with a passion for building innovative digital products. I hold a Bachelor's degree from Mumbai University and currently serve as the Technical Lead for FLUTTER at LITMINDTREE.\nMy professional background includes extensive experience in software development and computer programming, with a strong focus on Data Structures, Algorithms, and Mobile Application Development. As a dedicated programmer, I thrive on tackling complex challenges and contributing to effective solutions.\nI possess hands-on experience in the analysis, development, and implementation of software projects. My technical expertise spans C#, Dart, Object-Oriented Programming, and JavaScript. I am known for my enthusiasm as a team player, rapid learning abilities, creative problem-solving skills, and strong coding and communication capabilities.\nI am eager to explore opportunities in intellectually stimulating domains within the field of computer science, where I can further enhance and apply my knowledge and skills.";
   static const String learnmore = "Learn more >>";
-  static const String whatido = "What i do";
-  static const String linkedinurl =
-      'https://www.linkedin.com/in/pradip-dhanraj';
+  static const String techStack = "TECH_STACK";
+  static const String linkedinurl = 'https://www.linkedin.com/in/pradip-dhanraj';
   static const String githuburl = 'https://github.com/Pradip-Dhanraj';
   static const String profileimg =
       'https://scontent.fbom2-1.fna.fbcdn.net/v/t1.0-9/82782730_3113154942042504_5968298533185388544_n.jpg?_nc_cat=111&_nc_sid=09cbfe&_nc_ohc=nGXdWyVwjHwAX9nlygx&_nc_ht=scontent.fbom2-1.fna&oh=c0b5be8b1621a0cfd2b7acb09cf1fc75&oe=5F159892';

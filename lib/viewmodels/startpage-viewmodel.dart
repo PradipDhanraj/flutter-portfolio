@@ -27,7 +27,7 @@ class StartPageViewModel extends BaseModel {
       case PageSelection.Home:
         _resetColors();
         home = selectedColor;
-        displaycontainer = DarkDashboard();
+        displaycontainer = HomePage();
         break;
       case PageSelection.Skills:
         _resetColors();
@@ -44,7 +44,6 @@ class StartPageViewModel extends BaseModel {
         contact = selectedColor;
         displaycontainer = Contact();
         break;
-      default:
     }
     notifyListeners();
   }

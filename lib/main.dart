@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 import 'resources/locator.dart';
 import 'resources/router.dart' as router;
@@ -21,6 +22,9 @@ class MyApp extends StatelessWidget {
       //   primarySwatch: Colors.blue,
       //   visualDensity: VisualDensity.adaptivePlatformDensity,
       // ),
+      theme: ThemeData(
+        textTheme: GoogleFonts.vt323TextTheme().copyWith(),
+      ),
       onGenerateRoute: router.generateRoute,
       initialRoute: routes.StartPageRoute,
       navigatorKey: locator<NavigationService>().navigatorKey,

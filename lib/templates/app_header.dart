@@ -2,105 +2,87 @@ import 'package:flutter/material.dart';
 import 'package:portfolio/resources/enum.dart';
 import 'package:portfolio/resources/strings.dart';
 import 'package:portfolio/resources/route_paths.dart' as route;
+import 'package:portfolio/templates/common-widgets.dart';
 import 'package:portfolio/viewmodels/startpage-viewmodel.dart';
 
-class DarkHeader extends StatelessWidget {
-  final model;
-  static late DarkHeader _instance;
-  DarkHeader(this.model) {
+class Header extends StatelessWidget {
+  final StartPageViewModel _model;
+  static late Header _instance;
+  final ScrollController _scrollController;
+  final Duration _duration = Duration(seconds: 1);
+  final Cubic _curve = Curves.easeInOut;
+
+  Header(this._model, this._scrollController) {
     _instance = this;
-  }
-  Widget divider() => Transform.scale(
-        scale: 1.5,
-        child: Text(
-          "|",
-          style: TextStyle(color: Colors.white),
-        ),
-      );
-  Widget getText(Color textcolor, String text, StartPageViewModel model, PageSelection page) {
-    return GestureDetector(
-      child: Padding(
-        padding: const EdgeInsets.all(10),
-        child: Text(
-          text,
-          style: TextStyle(
-            color: textcolor,
-          ),
-        ),
-      ),
-      onTap: () => model.pageSelection(page),
-    );
   }
 
   static navigateTo(PageSelection page) {
-    _instance.model.pageSelection(page);
-  }
-
-  Widget getLinkText(
-    String text,
-    String url,
-    StartPageViewModel model,
-  ) {
-    return GestureDetector(
-      child: Padding(
-        padding: const EdgeInsets.all(10),
-        child: Text(
-          text,
-          style: TextStyle(
-            color: Colors.white,
-          ),
-        ),
-      ),
-      onTap: () => model.launchInBrowser(url),
-    );
+    _instance._model.pageSelection(page);
   }
 
   @override
   Widget build(BuildContext context) {
+    var size = MediaQuery.of(context).size;
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 50),
-      child: Row(
-        children: [
-          divider(),
-          getText(
-            model.home,
-            route.HomeRoute,
-            model,
-            PageSelection.Home,
-          ),
-          getText(
-            model.skills,
-            route.SkillsRoute,
-            model,
-            PageSelection.Skills,
-          ),
-          getText(
-            model.work,
-            route.WorkRoute,
-            model,
-            PageSelection.Work,
-          ),
-          divider(),
-          getLinkText(
-            "LinkedIn",
-            Strings.linkedinurl,
-            model,
-          ),
-          getLinkText(
-            "Github",
-            Strings.githuburl,
-            model,
-          ),
-          divider(),
-          Spacer(),
-          getText(
-            model.contact,
-            route.ContactRoute,
-            model,
-            PageSelection.Contact,
-          ),
-        ],
+      child: SizedBox(
+        height: size.height,
+        width: size.width - 100,
+        child: Column(
+          mainAxisSize: MainAxisSize.max,
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            CommonWidget.textWidget(
+              _model.home,
+              route.HomeRoute,
+              PageSelection.Home,
+              () {
+                scrollToFunc(size.height * 1);
+              },
+            ),
+            CommonWidget.textWidget(
+              _model.skills,
+              route.SkillsRoute,
+              PageSelection.Skills,
+              () {
+                scrollToFunc((size.height + (size.height * .8)));
+              },
+            ),
+            CommonWidget.textWidget(
+              _model.work,
+              route.WorkRoute,
+              PageSelection.Work,
+              () {
+                scrollToFunc((size.height + (size.height * .8) + (size.height * .7)));
+              },
+            ),
+            CommonWidget.linkTextWidget(
+              "LINKEDIN_PROFILE",
+              () => _model.launchInBrowser(Strings.linkedinurl),
+            ),
+            CommonWidget.linkTextWidget(
+              "GITHUB_PROFILE",
+              () => _model.launchInBrowser(Strings.githuburl),
+            ),
+            CommonWidget.textWidget(
+              _model.contact,
+              route.ContactRoute,
+              PageSelection.Contact,
+              () {
+                scrollToFunc((size.height + (size.height * .8) + (size.height * .7) + (size.height * .4)));
+              },
+            ),
+          ],
+        ),
       ),
+    );
+  }
+
+  void scrollToFunc(double offsetHeight) {
+    _scrollController.animateTo(
+      offsetHeight,
+      duration: _duration,
+      curve: _curve,
     );
   }
 }
