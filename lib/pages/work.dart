@@ -36,7 +36,7 @@ class Work extends StatelessWidget {
                   (e) => GestureDetector(
                     onTap: () => {if (e["url"] != "") model.snippets.launchInBrowser(e["url"])},
                     child: Image.asset(
-                      "${e["os"]}.png",
+                      "assets/${e["os"]}.png",
                       height: 50,
                       width: 50,
                     ),

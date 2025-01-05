@@ -14,7 +14,7 @@ class Contact extends StatelessWidget {
         builder: (context, model, child) => FutureBuilder(
           future: model.loaddata(),
           builder: (BuildContext context, AsyncSnapshot<dynamic> snapshot) {
-            return snapshot.hasData
+            return model.profile != null
                 ? Container(
                     height: MediaQuery.of(context).size.height * .5,
                     child: Center(
@@ -32,11 +32,10 @@ class Contact extends StatelessWidget {
                                   mainAxisAlignment: MainAxisAlignment.center,
                                   children: [
                                     CircleAvatar(
-                                      radius: (width - 100) * .2,
+                                      radius: (width * .09),
                                       backgroundColor: Colors.black,
-                                      backgroundImage: NetworkImage(
-                                        Strings.profileimg,
-                                      ),
+                                      backgroundImage: AssetImage('assets/profile_pic.jpeg'),
+                                      //child: Image.asset('assets/profile_pic.jpeg'),
                                     ),
                                   ],
                                 ),
@@ -45,27 +44,27 @@ class Contact extends StatelessWidget {
                                 crossAxisAlignment: CrossAxisAlignment.center,
                                 children: [
                                   Text(
-                                    "${model.profile["name"]} - ${model.profile["location"]}",
+                                    "${model.profile!["name"]} - ${model.profile!["location"]}",
                                     style: TextStyle(
                                       color: Colors.white,
                                       fontSize: fontSize,
                                     ),
                                   ),
                                   // Text(
-                                  //   model.profile["location"],
+                                  //   model.profile!["location"],
                                   //   style: TextStyle(
                                   //     color: Colors.white,
                                   //   ),
                                   // ),
                                   Text(
-                                    "${model.profile['currentjob']['organization']} - ${model.profile['currentjob']['position']}",
+                                    "${model.profile!['currentjob']['organization']} - ${model.profile!['currentjob']['position']}",
                                     style: TextStyle(
                                       color: Colors.white,
                                       fontSize: fontSize,
                                     ),
                                   ),
                                   // Text(
-                                  //   model.profile['location'],
+                                  //   model.profile!['location'],
                                   //   style: TextStyle(
                                   //     color: Colors.white,
                                   //   ),
@@ -84,7 +83,7 @@ class Contact extends StatelessWidget {
                                       ),
                                       Column(
                                         crossAxisAlignment: CrossAxisAlignment.center,
-                                        children: (model.profile['contatnumber'] as List<dynamic>)
+                                        children: (model.profile!['contatnumber'] as List<dynamic>)
                                             .map(
                                               (m) => Text(
                                                 "$m",
@@ -111,7 +110,7 @@ class Contact extends StatelessWidget {
                                       ),
                                       Column(
                                         crossAxisAlignment: CrossAxisAlignment.start,
-                                        children: (model.profile['email'] as List<dynamic>)
+                                        children: (model.profile!['email'] as List<dynamic>)
                                             .map(
                                               (m) => Text(
                                                 "$m",

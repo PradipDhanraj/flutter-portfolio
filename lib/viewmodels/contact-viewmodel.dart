@@ -15,12 +15,16 @@ class ContactViewModel extends BaseModel {
   //   }
   // }
 
-  late Map<String, dynamic> profile;
+  Map<String, dynamic>? profile;
 
   Future<bool> loaddata() async {
-    var jsonbody = await rootBundle.loadString('profile.json');
-    profile = json.decode(jsonbody);
-    notifyListeners();
-    return profile != null;
+    try {
+      var jsonbody = await rootBundle.loadString('assets/profile.json');
+      profile = json.decode(jsonbody);
+      notifyListeners();
+      return profile != null;
+    } catch (e) {
+      return false;
+    }
   }
 }

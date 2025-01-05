@@ -11,7 +11,7 @@ class SkillsViewModel extends BaseModel {
 
   SkillsViewModel() {
     selectedskill = "Flutter";
-    techpic = "$selectedskill.png";
+    techpic = "assets/$selectedskill.png";
     skillslist = [
       {
         "title": "Flutter",
@@ -44,7 +44,7 @@ class SkillsViewModel extends BaseModel {
         ],
       },
       {
-        "title": ".Net_Core",
+        "title": "DOT_Net_Core",
         "fontsize": unfocusedsize,
         "opacity": unfocusedopacity,
         "skills": [
@@ -65,7 +65,7 @@ class SkillsViewModel extends BaseModel {
     }
     skillslist[index]["fontsize"] = fontsize;
     selectedskill = skillslist[index]["title"];
-    techpic = "$selectedskill.png";
+    techpic = "assets/$selectedskill.png";
     skillslist[index]["opacity"] = focusedopacity;
     notifyListeners();
   }

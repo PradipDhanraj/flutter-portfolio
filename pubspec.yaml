@@ -54,11 +54,13 @@ flutter:
      - assets/banner.jpg
      - assets/Flutter.png
      - assets/Xamarin.png
-     - assets/.Net_Core.png
+     - assets/DOT_Net_Core.png
      - assets/android.png
      - assets/ios.png
      - assets/windows.png
      - assets/profile_pic.jpeg
+     - assets/profile.json
+     - assets/work.json
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.

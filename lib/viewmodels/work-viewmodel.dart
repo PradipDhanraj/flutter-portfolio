@@ -27,7 +27,7 @@ class WorkViewModel extends BaseModel {
   }
 
   Future<dynamic> getprojectlist() async {
-    var jsonbody = await rootBundle.loadString('work.json');
+    var jsonbody = await rootBundle.loadString('assets/work.json');
     return json.decode(jsonbody)["result"];
   }
 }
