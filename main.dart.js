@@ -63054,7 +63054,7 @@ return A.M($async$kp,r)}}
 A.nJ.prototype={}
 A.B4.prototype={
 V(a){var s=this,r=A.cl(a,null,t.w).w.a
-return new A.eO(B.yK,A.m6(A.f3(A.a([A.Og(B.h,"ABOUT_ME",B.DC,new A.RJ(s,r)),A.Og(B.h,"TECH_STACK",B.DD,new A.RK(s,r)),A.Og(B.h,"PROJECTS",B.DE,new A.RL(s,r)),A.a9U("LINKEDIN_PROFILE",new A.RM(s)),A.a9U("GITHUB_PROFILE",new A.RN(s)),A.Og(B.h,"CONTACT_ME",B.DF,new A.RO(s,r))],t.F),B.b9,B.bi,B.Y),r.b,r.a-100),null)},
+return new A.eO(B.yK,A.m6(A.f3(A.a([A.Og(B.h,"ABOUT_ME",B.DC,new A.RJ(s,r)),A.Og(B.h,"TECH_STACK",B.DD,new A.RK(s,r)),A.Og(B.h,"PROJECTS",B.DE,new A.RL(s,r)),A.a9U("LINKEDIN",new A.RM(s)),A.a9U("GITHUB",new A.RN(s)),A.Og(B.h,"CONTACT_ME",B.DF,new A.RO(s,r))],t.F),B.b9,B.bi,B.Y),r.b,r.a-100),null)},
 pf(a){this.d.h4(a,B.f2,this.e)}}
 A.RJ.prototype={
 $0(){this.a.pf(this.b.b)},
