@@ -57,11 +57,11 @@ class Header extends StatelessWidget {
               },
             ),
             CommonWidget.linkTextWidget(
-              "LINKEDIN_PROFILE",
+              "LINKEDIN",
               () => _model.launchInBrowser(Strings.linkedinurl),
             ),
             CommonWidget.linkTextWidget(
-              "GITHUB_PROFILE",
+              "GITHUB",
               () => _model.launchInBrowser(Strings.githuburl),
             ),
             CommonWidget.textWidget(
