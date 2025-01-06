@@ -4,10 +4,15 @@ import 'package:portfolio/viewmodels/contact-viewmodel.dart';
 import 'package:provider/provider.dart';
 
 class Contact extends StatelessWidget {
-  final double fontSize = 30;
+  late double fontSize;
   @override
   Widget build(BuildContext context) {
-    var width = MediaQuery.of(context).size.width;
+    var size = MediaQuery.of(context).size;
+    if (size.height > size.width) {
+      fontSize = size.width * .03;
+    } else {
+      fontSize = 30;
+    }
     return ChangeNotifierProvider(
       create: (context) => ContactViewModel(),
       child: Consumer<ContactViewModel>(
@@ -32,7 +37,7 @@ class Contact extends StatelessWidget {
                                   mainAxisAlignment: MainAxisAlignment.center,
                                   children: [
                                     CircleAvatar(
-                                      radius: (width * .09),
+                                      radius: (size.width * .09),
                                       backgroundColor: Colors.black,
                                       backgroundImage: AssetImage('assets/profile_pic.jpeg'),
                                       //child: Image.asset('assets/profile_pic.jpeg'),

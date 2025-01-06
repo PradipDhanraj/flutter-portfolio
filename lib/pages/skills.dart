@@ -4,6 +4,7 @@ import 'package:portfolio/viewmodels/skills-viewmodel.dart';
 import 'package:provider/provider.dart';
 
 class Skills extends StatelessWidget {
+  double scale = 1;
   Widget getList(SkillsViewModel model) {
     var item = model.skillslist.firstWhere((element) => element["title"] == model.selectedskill)["skills"];
     return ListView.builder(
@@ -15,7 +16,7 @@ class Skills extends StatelessWidget {
           textAlign: TextAlign.start,
           style: TextStyle(
             color: Colors.white,
-            fontSize: 25,
+            fontSize: 25 * scale,
           ),
         );
       },
@@ -25,10 +26,11 @@ class Skills extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     var size = MediaQuery.of(context).size;
+    scale = size.height > size.width ? 0.6 : 1;
     return SizedBox(
       height: size.height * .7,
       child: ChangeNotifierProvider(
-        create: (context) => SkillsViewModel(),
+        create: (context) => SkillsViewModel(scale),
         child: Consumer<SkillsViewModel>(
           builder: (context, model, child) {
             return Column(
@@ -41,7 +43,7 @@ class Skills extends StatelessWidget {
                   textAlign: TextAlign.start,
                   style: TextStyle(
                     color: Colors.white,
-                    fontSize: 50,
+                    fontSize: 50 * scale,
                   ),
                 ),
                 SizedBox(
@@ -59,7 +61,7 @@ class Skills extends StatelessWidget {
                           children: [
                             Image.asset(
                               model.techpic,
-                              height: 200,
+                              height: 200 * scale,
                             ),
                             ListView.builder(
                               shrinkWrap: true,
@@ -73,11 +75,11 @@ class Skills extends StatelessWidget {
                                       textAlign: TextAlign.center,
                                       style: TextStyle(
                                         color: Colors.white,
-                                        fontSize: model.skillslist[i]["fontsize"],
+                                        fontSize: model.skillslist[i]["fontsize"] * scale,
                                       ),
                                     ),
                                   ),
-                                  onTap: () => model.setFontSize(i, model.focusedsize),
+                                  onTap: () => model.setFontSize(i, model.focusedsize, scale: scale),
                                 );
                               },
                             ),

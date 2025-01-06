@@ -6,6 +6,7 @@ import 'package:provider/provider.dart';
 import 'package:portfolio/resources/route_paths.dart' as route;
 
 class Work extends StatelessWidget {
+  double scale = 1;
   Widget getList(WorkViewModel model) {
     var item = model.worklist[model.selectedindex];
     return Column(
@@ -16,14 +17,14 @@ class Work extends StatelessWidget {
           textAlign: TextAlign.start,
           style: TextStyle(
             color: Colors.white,
-            fontSize: 30,
+            fontSize: 30 * scale,
           ),
         ),
         Padding(
           padding: const EdgeInsets.only(top: 20.0),
           child: Text(
             item["description"],
-            style: TextStyle(color: Colors.white, fontSize: 22),
+            style: TextStyle(color: Colors.white, fontSize: 22 * scale),
           ),
         ),
         Padding(
@@ -52,7 +53,8 @@ class Work extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     var height = MediaQuery.of(context).size.height;
-    //var width = MediaQuery.of(context).size.width;
+    var size = MediaQuery.of(context).size;
+    scale = size.height > size.width ? 0.8 : 1;
     return ChangeNotifierProvider(
       create: (context) => WorkViewModel(),
       child: Consumer<WorkViewModel>(
@@ -71,7 +73,7 @@ class Work extends StatelessWidget {
                         textAlign: TextAlign.start,
                         style: TextStyle(
                           color: Colors.white,
-                          fontSize: 50,
+                          fontSize: 50 * scale,
                         ),
                       ),
                       Table(
@@ -94,7 +96,8 @@ class Work extends StatelessWidget {
                                           textAlign: TextAlign.center,
                                           style: TextStyle(
                                             color: Colors.white,
-                                            fontSize: model.selectedindex == i ? model.focusedsize : model.unfocusedsize,
+                                            fontSize:
+                                                (model.selectedindex == i ? model.focusedsize : model.unfocusedsize) * scale,
                                           ),
                                         ),
                                       ),

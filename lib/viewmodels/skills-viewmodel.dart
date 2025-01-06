@@ -8,14 +8,15 @@ class SkillsViewModel extends BaseModel {
   late String techpic;
   final double focusedopacity = 1;
   final double unfocusedopacity = .5;
-
-  SkillsViewModel() {
+  double _scale = 1;
+  SkillsViewModel(double scale) {
+    _scale = scale;
     selectedskill = "Flutter";
     techpic = "assets/$selectedskill.png";
     skillslist = [
       {
         "title": "Flutter",
-        "fontsize": focusedsize,
+        "fontsize": focusedsize * _scale,
         "opacity": focusedopacity,
         "skills": [
           "State Managements (Bloc, GetX, Provider)",
@@ -30,7 +31,7 @@ class SkillsViewModel extends BaseModel {
       },
       {
         "title": "Xamarin",
-        "fontsize": unfocusedsize,
+        "fontsize": unfocusedsize * _scale,
         "opacity": unfocusedopacity,
         "skills": [
           "Custom renderers.",
@@ -45,7 +46,7 @@ class SkillsViewModel extends BaseModel {
       },
       {
         "title": "DOT_Net_Core",
-        "fontsize": unfocusedsize,
+        "fontsize": unfocusedsize * _scale,
         "opacity": unfocusedopacity,
         "skills": [
           "API Development",
@@ -58,12 +59,12 @@ class SkillsViewModel extends BaseModel {
     ];
   }
 
-  void setFontSize(int index, double fontsize) {
+  void setFontSize(int index, double fontsize, {double scale = 1}) {
     for (var item in skillslist) {
-      item["fontsize"] = unfocusedsize;
+      item["fontsize"] = unfocusedsize * scale;
       item["opacity"] = unfocusedopacity;
     }
-    skillslist[index]["fontsize"] = fontsize;
+    skillslist[index]["fontsize"] = fontsize * scale;
     selectedskill = skillslist[index]["title"];
     techpic = "assets/$selectedskill.png";
     skillslist[index]["opacity"] = focusedopacity;
