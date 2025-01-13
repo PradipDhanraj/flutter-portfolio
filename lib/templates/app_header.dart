@@ -56,6 +56,14 @@ class Header extends StatelessWidget {
                 scrollToFunc((size.height + (size.height * .8) + (size.height * .7)));
               },
             ),
+            CommonWidget.textWidget(
+              _model.game,
+              "PLAY_WITH_ME",
+              PageSelection.Game,
+              () {
+                scrollToFunc((size.height + (size.height * .8) + (size.height * .7) + (size.height * .8)));
+              },
+            ),
             CommonWidget.linkTextWidget(
               "LINKEDIN",
               () => _model.launchInBrowser(Strings.linkedinurl),
@@ -69,7 +77,7 @@ class Header extends StatelessWidget {
               route.ContactRoute,
               PageSelection.Contact,
               () {
-                scrollToFunc((size.height + (size.height * .8) + (size.height * .7) + (size.height * .4)));
+                scrollToFunc((size.height + (size.height * .8) + (size.height * .7) + (size.height * .8) + (size.height * .4)));
               },
             ),
           ],

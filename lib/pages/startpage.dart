@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:portfolio/pages/contact.dart';
 import 'package:portfolio/pages/dashboard.dart';
+import 'package:portfolio/pages/game-section.dart';
 import 'package:portfolio/pages/skills.dart';
 import 'package:portfolio/pages/work.dart';
 import 'package:portfolio/templates/app_header.dart';
@@ -25,6 +26,7 @@ class StartPage extends StatelessWidget {
                 HomePage(),
                 Skills(),
                 Work(),
+                GameSection(model),
                 Contact(),
               ],
             ),

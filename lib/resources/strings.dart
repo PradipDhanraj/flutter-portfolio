@@ -8,6 +8,10 @@ class Strings {
   static const String techStack = "TECH_STACK";
   static const String linkedinurl = 'https://www.linkedin.com/in/pradip-dhanraj';
   static const String githuburl = 'https://github.com/Pradip-Dhanraj';
+  static const String gameurl = 'https://pradipdhanraj.github.io/flutter-action-game-multiplayer/';
+  static const String playNowText = "Play Now";
+  static const String gameDescription =
+      'This game is created on Flutter using Flame engine.\nIts local multiplayer game where you can play with your friends.';
   static const String profileimg =
       'https://scontent.fbom2-1.fna.fbcdn.net/v/t1.0-9/82782730_3113154942042504_5968298533185388544_n.jpg?_nc_cat=111&_nc_sid=09cbfe&_nc_ohc=nGXdWyVwjHwAX9nlygx&_nc_ht=scontent.fbom2-1.fna&oh=c0b5be8b1621a0cfd2b7acb09cf1fc75&oe=5F159892';
 

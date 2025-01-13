@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:portfolio/pages/contact.dart';
 import 'package:portfolio/pages/dashboard.dart';
+import 'package:portfolio/pages/game-section.dart';
 import 'package:portfolio/pages/skills.dart';
 import 'package:portfolio/pages/work.dart';
 import 'package:portfolio/resources/colors.dart';
@@ -12,6 +13,7 @@ class StartPageViewModel extends BaseModel {
   Color skills = Colors.white;
   Color work = Colors.white;
   Color contact = Colors.white;
+  Color game = Colors.white;
 
   void _resetColors() {
     home = Colors.white;
@@ -38,6 +40,11 @@ class StartPageViewModel extends BaseModel {
         _resetColors();
         work = selectedColor;
         displaycontainer = Work();
+        break;
+      case PageSelection.Game:
+        _resetColors();
+        work = selectedColor;
+        displaycontainer = GameSection(this);
         break;
       case PageSelection.Contact:
         _resetColors();
