@@ -1,3 +1,4 @@
+import 'package:download/download.dart';
 import 'package:flutter/material.dart';
 import 'package:portfolio/pages/contact.dart';
 import 'package:portfolio/pages/dashboard.dart';
@@ -23,6 +24,17 @@ class StartPageViewModel extends BaseModel {
   }
 
   void launchInBrowser(String url) => snippets.launchInBrowser(url);
+
+  void downloadDoc(String url) async {
+    // final directory = await getDownloadsDirectory();
+    // await FileSaver.instance.saveAs(
+    //   name: 'PRADIP_DHANRAJ_RESUME',
+    //   ext: 'pdf',
+    //   mimeType: MimeType.pdf,
+    //   filePath: directory?.path,
+    // );
+    downloadUrl(url);
+  }
 
   Future pageSelection(PageSelection page) async {
     switch (page) {

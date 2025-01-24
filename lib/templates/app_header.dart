@@ -58,7 +58,7 @@ class Header extends StatelessWidget {
             ),
             CommonWidget.textWidget(
               _model.game,
-              "PLAY_WITH_ME",
+              "GAME_WITH_FLAME_ENGINE",
               PageSelection.Game,
               () {
                 scrollToFunc((size.height + (size.height * .8) + (size.height * .7) + (size.height * .8)));
@@ -71,6 +71,10 @@ class Header extends StatelessWidget {
             CommonWidget.linkTextWidget(
               "GITHUB",
               () => _model.launchInBrowser(Strings.githuburl),
+            ),
+            CommonWidget.linkTextWidget(
+              "RESUME",
+              () => _model.downloadDoc("${Uri.base}/${Strings.resumeLink}"),
             ),
             CommonWidget.textWidget(
               _model.contact,
