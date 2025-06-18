@@ -8,7 +8,7 @@ class Strings {
   static const String techStack = "TECH_STACK";
   static const String linkedinurl = 'https://www.linkedin.com/in/pradip-dhanraj';
   static const String githuburl = 'https://github.com/Pradip-Dhanraj';
-  static const String resumeLink = './assets/PRADIP_DHANRAJ_RESUME.pdf';
+  static const String resumeLink = 'assets/assets/PRADIP_DHANRAJ_RESUME.pdf';
   static const String gameurl = 'https://pradipdhanraj.github.io/flutter-action-game-multiplayer/';
   static const String playNowText = "Play Now";
   static const String gameDescription =

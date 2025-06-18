@@ -74,7 +74,7 @@ class Header extends StatelessWidget {
             ),
             CommonWidget.linkTextWidget(
               "RESUME",
-              () => _model.downloadDoc("${Uri.base}/${Strings.resumeLink}"),
+              () => _model.downloadDoc("${Uri.base}/${Strings.resumeLink}".replaceAll('index.html/', '')),
             ),
             CommonWidget.textWidget(
               _model.contact,
