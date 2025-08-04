@@ -2,8 +2,8 @@
   "relation": ["delegate_permission/common.handle_all_urls"],
   "target": {
     "namespace": "android_app",
-    "package_name": "com.pradip.dhanraj",
+    "package_name": "com.dhanraj.myweddingapp",
     "sha256_cert_fingerprints":
-    ["00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00"]
+    ["63:75:fa:eb:7b:74:c5:d0:23:c9:46:c5:3f:90:0e:ab:ad:21:70:79:16:16:d7:90:6e:fa:70:dd:e8:80:31:29"]
   }
 }]
