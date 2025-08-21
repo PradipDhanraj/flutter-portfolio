@@ -1,39 +1,36 @@
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
+import 'package:myevents/app_router.dart';
+import 'package:myevents/services/firebase/firebase_options.dart';
+import 'package:myevents/services/notification/notification_service.dart';
+import 'package:myevents/utility/locator.dart';
+import 'package:myevents/utility/constants/env.dart';
+import 'package:supabase_flutter/supabase_flutter.dart';
 
-import 'resources/locator.dart';
-import 'resources/router.dart' as router;
-import 'resources/route_paths.dart' as routes;
-import 'services/navigation-service.dart';
-
-void main() {
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
+  await Supabase.initialize(url: Env.supabaseUrl, anonKey: Env.supabaseAnonKey,accessToken: () async{
+    return DI.authService.firebaseAuth.currentUser?.refreshToken;
+  },);
+  await NotificationService.initialize();
   setupLocator();
-  runApp(MyApp());
+  await DI.prefs.init();
+  runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
-  //final Snippets snippets = Snippets();
+  const MyApp({super.key});
+
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Pradip Dhanraj Portfolio',
+    return MaterialApp.router(
+      title: 'My Events',
       debugShowCheckedModeBanner: false,
-      // theme: ThemeData(
-      //   primarySwatch: Colors.blue,
-      //   visualDensity: VisualDensity.adaptivePlatformDensity,
-      // ),
       theme: ThemeData(
-        textTheme: GoogleFonts.vt323TextTheme().copyWith(),
+        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
       ),
-      onGenerateRoute: router.generateRoute,
-      initialRoute: routes.StartPageRoute,
-      navigatorKey: locator<NavigationService>().navigatorKey,
-      // home: ChangeNotifierProvider<CounterBloc>.value(
-      //   value: CounterBloc(),
-      //   child: CounterPage(
-      //     snippets: snippets,
-      //   ),
-      // ),
+      routerConfig: router,
     );
   }
 }

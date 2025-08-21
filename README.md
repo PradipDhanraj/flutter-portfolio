@@ -1,16 +1,30 @@
-# portfolio
+# myevents
 
-A new Flutter project.
+==> Hnoss Project
 
-## Getting Started
+## TODO: 
+1. Set APNS for ios project.
+2. Setup deeplinking for ios project.
 
-This project is a starting point for a Flutter application.
+## Table Schema
 
-A few resources to get you started if this is your first Flutter project:
+-- WARNING: This schema is for context only and is not meant to be run.
+-- Table order and constraints may not be valid for execution.
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
+CREATE TABLE public.wedding_event (
+  id bigint GENERATED ALWAYS AS IDENTITY NOT NULL UNIQUE,
+  longitude double precision,
+  title text NOT NULL DEFAULT ''::text,
+  event_date date NOT NULL,
+  payment_id text DEFAULT ''::text,
+  created_at timestamp with time zone NOT NULL DEFAULT now(),
+  latitude double precision,
+  owner_id text DEFAULT 'test_owner'::text,
+  event_id text NOT NULL UNIQUE,
+  imageUrl text DEFAULT ''::text,
+  location character varying DEFAULT ''::character varying,
+  username text DEFAULT ''::text,
+  CONSTRAINT wedding_event_pkey PRIMARY KEY (id)
+);
 
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+

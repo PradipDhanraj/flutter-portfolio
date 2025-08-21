@@ -1,0 +1,54 @@
+{
+  "project_info": {
+    "project_number": "228179713430",
+    "project_id": "my-wedding-app-eb286",
+    "storage_bucket": "my-wedding-app-eb286.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:228179713430:android:98959e0ec8e23a92c151b7",
+        "android_client_info": {
+          "package_name": "com.dhanraj.myweddingapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "228179713430-9kul6jc02ai2upbfak2th66fj9s9dgkq.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.dhanraj.myweddingapp",
+            "certificate_hash": "caafc3a4fc48de544e571be9c8a915d4daad82cf"
+          }
+        },
+        {
+          "client_id": "228179713430-mvtp6i2be5o71qh5vqqob21bs3tc6kjp.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBzMaa1Rais8CFCWtH9dAw2eqaKHfsB_VU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "228179713430-mvtp6i2be5o71qh5vqqob21bs3tc6kjp.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "228179713430-89haalktjhrm2l272i96n2udsj885jt7.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.dhanraj.myweddingapp"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
